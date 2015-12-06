@@ -38,7 +38,7 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
-gem 'bootstrap-sass' , '~> 3.3.5'
+gem 'bootstrap-sass', '~> 3.3.5'
 
 # Use unicorn as the app server
 # gem 'unicorn'
