@@ -13,13 +13,28 @@
 	border-radius: 0;
 	box-shadow: 0px 2px 5px #888888;
 
+
 }
 
 body {
+	
 	background: url('/assets/linedpaper.png');
-
 /* Trebuchet-based sans serif stack */
 	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
 
 }
+
+/* navigation bar control for website name*/
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+    font-family: 'code_pro_light_demoregular';
+    font-size: 40px;
+}
+
+/* navigation bar control for LINKS */
+.navbar-inverse .navbar-nav > li > a {
+	font-family: 'code_pro_light_demoregular';
+  	color: #FFFFFF;
+}
+
 
