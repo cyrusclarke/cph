@@ -40,6 +40,10 @@ end
 
 gem 'bootstrap-sass', '~> 3.3.5'
 
+gem 'kaminari'
+
+gem 'simple_form'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
