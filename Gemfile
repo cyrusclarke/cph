@@ -44,6 +44,8 @@ gem 'kaminari'
 
 gem 'simple_form'
 
+gem 'devise'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
