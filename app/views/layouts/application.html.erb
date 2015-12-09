@@ -34,7 +34,12 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li>
+        <% if user_signed_in? %>
+        <li> <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %> </li>
+        <% else %>
+        <li> <%= link_to 'Login', new_user_session_path, :method => :get %></li>
+        <li> <%= link_to 'Sign Up', new_user_registration_path, :method => :get %></li>
+        <% end %>
         <%= link_to 'Add Your Place', new_place_path, :class =>"nav navbar-nav navbar-right" %>
         </li>
       </ul>
