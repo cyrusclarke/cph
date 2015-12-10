@@ -1,4 +1,6 @@
 class Place < ActiveRecord::Base
-	paginates_per 1
 	belongs_to :user
+	geocoded_by :address
+	after_validation :geocode
+	validates :name, :presence => true
 end

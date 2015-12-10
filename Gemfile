@@ -46,6 +46,11 @@ gem 'simple_form'
 
 gem 'devise'
 
+gem 'geocoder'
+
+gem 'figaro', '>= 1.0.0'
+
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
