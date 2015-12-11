@@ -3,6 +3,40 @@
 		<i> <%= @place.address %> </i>
 		<br>
 		<p> <%= @place.description %> </p>
+
+<br>
+<%# Maps Displayed on Page %>
+    
+    
+
+<% if @place.longitude.present? && @place.latitude.present? %>
+
+    <script>
+
+	function initMap() {
+  		var myLatLng = {lat: <%= @place.longitude %>, lng: <%= @place.latitude %>};
+
+  		var map = new google.maps.Map(document.getElementById('map'), {
+    		zoom: 4,
+    		center: myLatLng
+ 		});
+
+  		var marker = new google.maps.Marker({
+    		position: myLatLng,
+    		map: map,
+    		title: 'Hello World!'
+  		});
+	}
+
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
+    <div id="map"></div>
+<% end %>
+
+
+
 	<div class="pull-right">
 		<% if current_user && current_user == @place.user %>
 		<%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
