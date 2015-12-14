@@ -59,11 +59,6 @@
  <% end %>
 -->
 
-<!-- Button trigger modal -->
-<div class="comments-button col-xs-12 col-xs-offset-0.5" >
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add Comment
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -73,8 +68,8 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Enter Your Comment</h4>
       </div>
+	<%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
       <div class="modal-body">
-      	<%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
  	<%= f.input :message %>
  	<%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
       </div>
@@ -82,18 +77,31 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <%= f.submit "enter", :class => "btn btn-primary" %>
-         <% end %>
       </div>
+
+   <% end %>
     </div>
   </div>
 </div>
 </div>
+
+<!-- Button trigger modal -->
+<div class="col-xs-10 col-xs-offset-1">
+<button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+  Add Comment
+</button>
+</div>
+<div class="clear"> </div>
 <div class="clear"> </div>
 
+
 <%# Comments Listed Here %>
-<h1> comments </h1>
+<h1 class="pull-left">Comments</h1>
+<div class="clear"> </div>
+
 <% @place.comments.each do |comment| %>
 <div>
+<div class="col-xs-12 col-sm-6">
 	<blockquote>
 		<% if comment.humanized_rating.present? %>
 		<b><%= comment.humanized_rating %></b>
