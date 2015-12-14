@@ -50,12 +50,47 @@
 <div class="clear"> </div>
 <br>
 
+<!-- Original Comment Entry On Page 
+
 <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
  	<%= f.input :message %>
  	<%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
  	<%= f.submit "enter", :class => "btn btn-primary" %>
  <% end %>
+-->
 
+<!-- Button trigger modal -->
+<div class="comments-button col-xs-12 col-xs-offset-0.5" >
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Add Comment
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Enter Your Comment</h4>
+      </div>
+      <div class="modal-body">
+      	<%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
+ 	<%= f.input :message %>
+ 	<%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "enter", :class => "btn btn-primary" %>
+         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="clear"> </div>
+
+<%# Comments Listed Here %>
 <h1> comments </h1>
 <% @place.comments.each do |comment| %>
 <div>
@@ -68,3 +103,4 @@
 	</blockquote>	
 </div>
 <% end %>
+
