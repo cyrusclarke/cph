@@ -5,7 +5,7 @@ Cph::Application.routes.draw do
 
   resources :places do
     resources :comments, :only => :create
-    resources :photos, :only => :create
+    resources :photos, only: [:create, :destroy]
   end 
 
 
