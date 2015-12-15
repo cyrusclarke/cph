@@ -50,6 +50,8 @@ gem 'geocoder'
 
 gem 'figaro', '>= 1.0.0'
 
+gem 'carrierwave'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'

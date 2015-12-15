@@ -94,6 +94,12 @@
 <div class="clear"> </div>
 <div class="clear"> </div>
 
+<!-- Photos Submit -->
+<%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+ <%= f.input :photo_id %>
+ <%= f.input :caption %>
+ <%= f.submit 'enter' %>
+ <% end %>
 
 <%# Comments Listed Here %>
 <h1 class="pull-left">Comments</h1>
@@ -109,6 +115,18 @@
 		<%= comment.message %>
 		<small><%= comment.user.email %></small>
 	</blockquote>	
+</div>
+<% end %>
+
+<div class="clear"> </div>
+
+<!-- Photos Displayed -->
+<h1> photos </h1>
+<% @place.photos.each do |photo| %>
+<div>
+<div class="col-xs-12 col-sm-6">
+    <b><%= photo.photo_id %></b>
+    <%= photo.caption %>
 </div>
 <% end %>
 
