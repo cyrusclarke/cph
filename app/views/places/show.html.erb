@@ -96,7 +96,8 @@
 
 <!-- Photos Submit -->
 <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
- <%= f.input :photo_id %>
+ <%#= f.input :photo_id %>
+ <%= f.input :picture %>
  <%= f.input :caption %>
  <%= f.submit 'enter' %>
  <% end %>
@@ -129,4 +130,8 @@
     <%= photo.caption %>
 </div>
 <% end %>
+
+
+
+
 
