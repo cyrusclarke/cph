@@ -60,7 +60,7 @@
 -->
 
 
-<!-- Modal -->
+<!-- Comment Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -85,8 +85,15 @@
 </div>
 </div>
 
-<!-- Button trigger modal -->
-<div class="col-xs-10 col-xs-offset-1">
+
+<!-- Button trigger modal PHOTOS-->
+<div class="col-xs-6 col-xs-offset-1 pull-left">
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#photoModal">
+  Submit Photos
+</button>
+
+<!-- Button trigger modal COMMENTS -->
+<div class="col-xs-6 pull-right">
 <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
   Add Comment
 </button>
@@ -94,13 +101,44 @@
 <div class="clear"> </div>
 <div class="clear"> </div>
 
-<!-- Photos Submit -->
+
+
+<!-- Photo Modal -->
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Submit Your Photos</h4>
+      </div>
+      <div class="modal-body">
+      <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %> 
+ <%#= f.input :photo_id %>
+        <%= f.input :picture %>
+        <br>
+        <%= f.input :caption %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         <%= f.submit 'enter', :class => "btn btn-primary" %>
+      </div>
+    </div>
+ <% end %>
+
+  </div>
+</div>
+
+
+
+
+<!-- Photos Submit 
 <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
  <%#= f.input :photo_id %>
  <%= f.input :picture %>
  <%= f.input :caption %>
  <%= f.submit 'enter' %>
  <% end %>
+ -->
 
 <%# Comments Listed Here %>
 <h1 class="pull-left">Comments</h1>

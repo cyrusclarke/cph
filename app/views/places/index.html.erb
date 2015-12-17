@@ -8,6 +8,15 @@
   	<small><%= place.user.email %> </small>
   	<%end%>
 
+<!-- Add Photos To Place Box on Home Index Page -->
+
+<% if place.photos.present? %>
+  <div class="col-xs-12 col-sm-6 img">
+    <b><%= image_tag place.photos.last.picture %></b>
+    <%= place.photos.last.caption %>
+  </div>
+<% end %>
+
 <!-- Add Quotes To Place Box on Home Index Page -->
 
 <% if place.comments.present? %>
