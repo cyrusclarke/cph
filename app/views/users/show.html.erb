@@ -1,7 +1,12 @@
+ <!-- Header for User Page with icon -->
+
 <div class="booyah-box col-xs-10 col-xs-offset-1" >
 	<div class="user-head-icon col-xs-5 col-sm-4 col-md-3">
 		<%= image_tag 'user_icon.png' %>
 	</div>
+
+<!-- User Info section -->
+
 	<div class="user-head push-right col-xs-7 col-sm-8 col-md-9">
 		<u><strong> User Name:</u><br> </strong>
 		<%= @user.email %> 
@@ -20,6 +25,9 @@
 
 <div class="clear">	</div>
 <br>
+
+ <!-- User's comments displayed on User Page -->
+
 <div class="text-center"> <h1>My Comments</h1>
 	<br>
 	<%  @user.comments.each do |comment| %>
@@ -39,3 +47,15 @@
 	<% end %>
 	</div>
 </div>
+<div class="clear">	</div>
+<br>
+
+ <!-- User's Places section -->
+
+
+<div class="text-center"> <h1>My Places </h1>
+<% @user.places.each do |place| %>
+ 	<h1><%= link_to place.name, place_path(place) %></h1>
+    	<i><%= place.address %></i>
+    	<p><%= place.description %></p><br />
+<% end %>
