@@ -116,13 +116,32 @@ img {
   box-shadow: 0px 3px 8px #2a2a2a;
 }
 
+/* for the User Page, styling for the top section of the page including the user icon and information */
+
 .user-head {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
 
 }
+
+/* for the User Page, styling for the top section of the page including the user icon  */
+
 
 .user-head-icon {
   position: relative;
   padding-top: 10px
+}
+
+/* for the User Page, styling for the link to the Place from the user's comment */
+
+.comment-links {
+  padding-top: 60px
+}
+
+
+/* for the User Page, styling for the font of the link to the Place from the user's comment */
+
+.comment-links a{
+  color: #000000;
+  padding-top: 20px
 }
