@@ -1,5 +1,20 @@
-<h1><%= @user.email %></h1>
-<h3>Member Since: <%= @user.created_at.strftime("%B %Y") %></h3>
-<h4> You have commented: <%= @user.comments.count %> times </h4>
-<h5> Number of 5 Star Reviews: <%= @user.comments.where(:rating => '5_stars').count %></h5>
-	
+<div class="booyah-box col-xs-10 col-xs-offset-1" >
+	<div class="user-head-icon col-xs-5">
+		<%= image_tag 'user_icon.png' %>
+	</div>
+	<div class="user-head push-right col-xs-7">
+		<u><strong> User Name:</u><br> </strong>
+		<%= @user.email %> 
+		<br>
+		<strong><u>Member Since:</u><br></strong><%= @user.created_at.strftime("%B %Y") %> 
+		
+		<div class="clear">
+		<div class="clear">
+		<div class="clear">
+
+		<h4><strong><u>Number of comments:</u></strong> <%= @user.comments.count %></h4>
+	 	<h4><strong><u>Number of 5 Star Reviews:</u></strong> <%= @user.comments.where(:rating => '5_stars').count %></h4>
+		</div>
+	</div>
+</div>
+
