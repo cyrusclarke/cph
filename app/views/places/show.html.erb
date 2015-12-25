@@ -158,6 +158,8 @@
 		  <% end %>
 		<%= comment.message %>
 		  <small><%= comment.user.email %></small>
+<%# !TEST! adding delete button for comments %>
+    <%= link_to 'Delete', place_comments_path(comment.place), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this'},:class => 'btn btn-danger' %>
 	   </blockquote>	
     </div>
   <% end %>

@@ -6,6 +6,12 @@ class CommentsController < ApplicationController
 		redirect_to place_path(@place)
 	end
 
+	def destroy
+		@place = Place.find(params[:place_id])
+		@place.comments.destroy(comment_params)
+		redirect_to root_path
+	end
+
 	private
 	def comment_params
 		params.require(:comment).permit(:message,:rating)
