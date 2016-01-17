@@ -30,7 +30,7 @@ class UsersControllerTest < ActionController::TestCase
 
    		place = FactoryGirl.create(:place)
    		post :create
-   		:place_id => place.id
+   		:place_id @place.id
    		:comment {:rating => "1_star", :message => 'something'}
    	end
 
